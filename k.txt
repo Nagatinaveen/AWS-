@@ -1,0 +1,68 @@
+Functional requirements (core features)
+
+User management
+Student and staff registration, profile edit, password reset.
+Role-based access: Admin, Librarian, Student.
+Authentication & authorization
+Secure login (username/password) and session management.
+Role-based permissions for actions (issue, return, manage inventory).
+Catalog & search
+Browse/catalogue with metadata (title, author, ISBN, edition, copies, location).
+Advanced search (title, author, ISBN, subject, availability) and filters.
+Lending operations
+Issue book to user with due date; record checkout details.
+Return processing with condition notes.
+Loan limits and configurable loan periods by role or item type.
+Reservations / holds
+Place/cancel holds; notify user when book available; FIFO queue.
+Fines & payments
+Calculate overdue fines; record payments and adjustments.
+Inventory & acquisitions
+Add/update/remove book records, track copy counts, barcodes.
+Purchase order / acquisition tracking (optional).
+Notifications
+Email/SMS/in-app notifications for due reminders, holds, fines.
+Reports & dashboards
+Circulation reports, overdue lists, inventory, user activity, acquisition reports.
+Import/export & integration
+Bulk import/export (CSV/Excel), integration with student database or LDAP.
+Audit & logging
+Log user actions (issue/return/update) for accountability.
+Admin configuration
+Configure loan rules, fine rates, working hours, notification templates.
+Non-functional requirements (quality attributes)
+
+Performance
+Page load/search responses < 2s under normal load; handle 200 concurrent users.
+Availability & reliability
+System uptime 99.5% (or higher); automated daily backups; RTO < 4 hours, RPO < 24 hours.
+Scalability
+Support horizontal scaling for web/app layers; database able to grow to 100k+ records.
+Security
+TLS encryption in transit; passwords hashed (bcrypt/Argon2); RBAC enforced.
+Input validation and protection against SQLi, XSS, CSRF.
+Audit trails and secure logs.
+Privacy & compliance
+Store personal data per applicable privacy laws (e.g., GDPR); data retention policies.
+Usability & accessibility
+Intuitive UI; primary tasks completed in ≤ 3 clicks.
+Meet WCAG 2.1 AA accessibility standards.
+Maintainability
+Modular codebase, documented APIs, automated tests (unit + integration).
+Interoperability & APIs
+RESTful API for common operations; CSV/JSON import-export.
+Portability
+Runs on Windows & Linux servers; responsive UI for desktop and mobile.
+Monitoring & observability
+Application and infrastructure monitoring, alerting for failures and threshold breaches.
+Localization
+Support for multiple languages and time zones (configurable).
+Backup & disaster recovery
+Regular backups, tested restores, and offsite storage.
+Acceptance criteria (examples)
+
+Search returns results in < 2s for a dataset of 50k records.
+Checkout transaction completes and is logged within 1s under normal load.
+Password reset email delivered within 5 minutes 95% of the time.
+Restore from latest backup completes within RTO target and data loss <= RPO.
+If you want, specify target scale (users/records) and I can translate these into concrete SLAs and data model constraints.
