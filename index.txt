@@ -1,0 +1,18 @@
+# 1. Start Minikube with Docker driver
+minikube start --driver=docker
+
+# 2. Create NGINX deployment
+kubectl create deployment nginx-deploy --image=nginx
+
+# 3. Expose deployment with fixed NodePort
+kubectl expose deployment nginx-deploy --type=NodePort --port=80 --node-port=30080
+
+# 4. Check resources (optional)
+kubectl get all
+kubectl get svc
+
+# 5. Get Minikube IP
+minikube ip
+
+# 6. Access NGINX in browser
+# http://<minikube-ip>:30080
